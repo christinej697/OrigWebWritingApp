@@ -1,0 +1,341 @@
+/* GENERAL *******************************/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: rgb(96, 134, 153);
+    color: rgb(255, 255, 255);
+    font-family: 'Lato', sans-serif;
+    font-weight: 50;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+    min-height: 100%;
+    text-align: justify;
+    line-height: 120%;
+}
+
+input[type=text] {
+    width: 30%;     /*50%*/
+    margin: 10px 5px;
+    padding: 5px;
+    font-size: 100%;
+    border-radius: 5px;
+    border: 1px solid rgb(181, 181, 181);
+}
+
+textarea {
+    margin: 20px 5px;
+    padding: 5px;
+    font-size: 80%;
+    border-radius: 5px;
+    border: 1px solid rgb(181, 181, 181);
+    font-family: sans-serif;
+}
+
+.btn:link, 
+.btn:visited {
+    display: inline-block;
+    text-decoration: none;
+    padding: 8px 20px;
+    color: rgb(113, 113, 113);
+    border-radius: 30px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(201, 201, 201);
+    font-weight: 400;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.btn:hover, 
+.btn:active {
+    background-color: rgb(234, 234, 234); /*#f4f4f4*/
+    color: rgb(113, 113, 113);
+}
+
+.active {
+    display: block;
+}
+
+/*LOGIN ********************************/
+
+h1 {
+    text-align: center;
+    margin-top: 100px;
+    padding: 20px;
+    border-bottom: solid 2px rgb(100, 213, 255);
+    width: 40%;
+    margin-left: 30%;
+}
+
+.submit-form {
+    width: 50%;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.sub-btn {
+    margin-top: 20px;
+}
+
+.login {
+    display: none;
+}
+
+.login.active {
+    display: block;
+}
+
+@media screen and (max-width: 950px) and (min-width: 767px) {
+    h1 {
+        width: 65% !important;
+        margin-left: 20% !important;
+    }
+    .equation-creater a {
+        padding: 8px 5px !important;
+        font-size: 18px !important;
+    }
+    .answer-box textarea {
+        width: 100% !important;
+    }
+    .page2-img {
+        margin-right: 0px !important;
+    }
+    .popup {
+        width: 80% !important;
+    }
+}
+
+@media screen and (max-width: 766px) and (min-width: 451px) {
+    h1 {
+        width: 85% !important;
+        margin-left: 10% !important;
+    }
+    input[type=text] {
+        width: 50% !important;
+    }
+    .answer-box textarea {
+        width: 100% !important;
+    }
+    .left,
+    .right {
+        display: block !important;
+        width: 100% !important;
+    }
+    .equation-creater {
+        width: 80% !important;
+    }
+    .equation-creater a {
+        padding: 8px 5px !important;
+        font-size: 18px !important;
+    }
+    .page2-img {
+        width: 100% !important;
+        margin-right: 0px !important;
+    }
+    .popup {
+        left: 15% !important;
+        margin-top: 25%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    h1 {
+        width: 100% !important;
+        margin-left: 0px !important;
+    }
+    input[type=text] {
+        width: 70% !important;
+    }
+    img {
+        width: 100% !important;
+    }
+    .answer-box textarea {
+        width: 100% !important;
+    }
+    .left,
+    .right {
+        display: block !important;
+        width: 100% !important;
+    }
+    .equation-creater {
+        width: 90% !important;
+    }
+    .equation-creater a {
+        padding: 8px 5px !important;
+        font-size: 15px !important;
+    }
+    .page2-img {
+        width: 100% !important;
+        margin-right: 0px !important;
+    }
+    .popup {
+        left: 15% !important;
+        margin-top: 25%;
+    }
+}
+
+/*PROBLEM *********************************/
+
+.problem-page1 {
+    display: none;
+}
+
+.problem-page1.active {
+    display: block;
+}
+
+.problem-page2 {
+    display: none;
+}
+
+.problem-page2.active {
+    display: block;
+}
+
+.problem-page3 {
+    display: none;
+}
+
+.problem-page3.active {
+    display: block;
+}
+
+.problem-page4 {
+    display: none;
+}
+
+.problem-page4.active {
+    display: block;
+}
+
+.prob-title {
+    margin: 40px 0px 15px 0px;   
+    position: relative;
+    border-bottom: solid 2px rgb(100, 213, 255);
+    padding: 8px;
+    width: 250px;
+}
+
+.prob-container {
+    max-width: 960px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.prob-display {
+    color: rgb(44, 44, 44);
+    background-color: rgb(255, 255, 255);
+    font-weight: 400;
+    border-radius: 10px;
+    text-align: center;
+    padding: 25px;
+}
+
+.circuit-image {
+    margin: 30px 0px 30px 0px;
+}
+
+.question {
+    margin-left: 10%;
+    margin-top: 30px;
+    width: 80%;
+    text-align: center;
+}
+
+#ques-1-input,
+#ques-2-input {
+    margin-top: 25px;
+    width: 20%;
+}
+
+.prob-btn:link, 
+.prob-btn:visited {
+    background-color: rgb(247, 247, 247);
+    border: 1px solid rgb(181, 181, 181);
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.prob-btn:hover, 
+.prob-btn:active {
+    background-color: rgb(232, 232, 232);
+}
+
+.page2-img {
+    margin-top: 40px;
+    margin-right: 60px;
+    float: right;
+    display: inline-block;
+}
+
+.equation-creater {
+    width: 80%;
+    border: solid 2px rgb(181, 181, 181);
+    border-radius: 8px;
+    display: inline-block;
+    padding: 6px;
+    margin-top: 40px;
+}
+
+.equation-creater a {
+    border-radius: 8px !important;
+    margin: 5px 5px;
+    width: 45%;
+    font-size: 18px;
+}
+
+.answer-box textarea{
+    width: 90%;
+    height: 300px;
+}
+
+.end-textarea {
+    width: 90%;
+    height: 100px;
+}
+
+.response {
+    margin: 20px;
+}
+
+.popup {
+    border: solid 2px rgb(181, 181, 181);
+    border-radius: 8px;
+    position: absolute;
+    padding: 6px;
+    width: 70%;
+    color: red;
+    top: 100%;
+    left: 10%;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s, opacity 0.3s;
+    background-color: rgb(255, 255, 255);
+}
+
+.left, .right {
+    display: inline-block;
+    width: 49%;
+    vertical-align: top;
+    position: relative;
+}
+
+.drop-down {
+    display: block;
+    margin-top: 15px;
+}
+
+select {
+    font-family: 'Lato', sans-serif;
+    padding: 3px;
+    margin-left: 8px;
+    border: solid 1px rgb(181, 181, 181);
+    border-radius: 3px;
+    font-size: 17px;
+    width: 120px;
+}
+
+
+

@@ -1,0 +1,46 @@
+<svg viewBox="0 0 350 210" width="350" height="210"
+    xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink" id="circuit1"><desc>Writing Problem 1 Circuit Schematic</desc>
+
+    <defs>
+    <g id="whole-circuit">
+
+        <g id="voltage-source">
+            <circle cx="40" cy="120" r="20" style="stroke: #2c2c2c; stroke-width: 2; fill: none;"/>
+            <polyline points="35 110, 45 110, 40 110, 40 105, 40 115" style="stroke: #2c2c2c; stroke-width: 2; fill:none"/>
+            <line x1="35" y1="130" x2="45" y2="130" style="stroke: #2c2c2c; stroke-width: 2;"/>
+        </g>
+        
+        <g id="resistor">
+            <polyline points="100 40, 105 48, 113 32, 121 48, 129 32, 137 48, 144 32, 149 40" style="stroke: #2c2c2c; stroke-width: 2; fill:none"/>
+        </g>
+        
+        <g id="wires">
+            <polyline points="40 100, 40 40, 100 40" style="stroke: #2c2c2c; stroke-width: 2; fill: none;"/>
+            <polyline points="149 40, 300 40, 300 100" style="stroke: #2c2c2c; stroke-width: 2; fill: none;"/>
+            <polyline points="300 149, 300 200, 40 200, 40 140" style="stroke: #2c2c2c; stroke-width: 2; fill: none;"/>
+            <polyline points="205 40, 205 100" style="stroke: #2c2c2c; stroke-width: 2; fill: none;"/>
+            <polyline points="205 149, 205 200" style="stroke: #2c2c2c; stroke-width: 2; fill: none;"/>
+        </g>
+        
+        <g id="resistor3">
+            <use xlink:href="#resistor" transform="translate(340, 0) rotate(90)"/>
+        </g>
+        
+        <g id="resistor2">
+            <use xlink:href="#resistor" transform="translate(245, 0) rotate(90)"/>
+        </g>
+        
+    </g>
+    </defs>
+    
+    <use xlink:href="#whole-circuit" transform="translate(15, 0)"/>
+    
+    <g id="labels">
+            <text x="5" y="120" style="font-family: sans-serif; font-size: 12pt; font-weight: bold; stroke: none; fill: #2c2c2c;">V<tspan baseline-shift="sub" font-size="10pt">S</tspan></text>
+            <text x="130" y="15" style="font-family: sans-serif; font-size: 12pt; font-weight: bold; stroke: none; fill: #2c2c2c;">R<tspan baseline-shift="sub" font-size="10pt">1</tspan></text>
+            <text x="237" y="127" style="font-family: sans-serif; font-size: 12pt; font-weight: bold; stroke: none; fill: #2c2c2c;">R<tspan baseline-shift="sub" font-size="10pt">2</tspan></text>
+            <text x="332" y="127" style="font-family: sans-serif; font-size: 12pt; font-weight: bold; stroke: none; fill: #2c2c2c;">R<tspan baseline-shift="sub" font-size="10pt">3</tspan></text>
+        </g>
+
+</svg>

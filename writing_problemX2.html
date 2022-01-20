@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html lang="en" class="writing-problem">
+<head>
+	<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Writing Exercise</title>
+        
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet">
+    
+     <!--EMAIL SCRIPT-->
+        <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.2.4/email.min.js"></script>
+        <script type="text/javascript">
+           (function(){
+              emailjs.init("user_1LQMnfau5E50JmZVPDFwj");
+           })();
+        </script>
+    
+</head>
+    
+<body>
+    
+    <div class="login active">
+    
+        <div class="app-title">
+            <h1>Writing Exercise</h1>
+        </div>
+    
+        <div class="submit-form">
+          <!--  <div class="first-name">
+                <input type="text" class="first-name-input" placeholder="First name" required>
+            </div>
+            <div class="last-name">
+                <input type="text" class="last-name-input" placeholder="Last name" required>
+            </div> -->
+            
+            <div class="id-form">
+                <input type="text" class="id-input" placeholder="Student ID" required autocomplete="off">
+            </div>
+            <div class="sub-btn">
+                <a href="#" class="submit-btn btn">Submit</a>
+            </div>
+            
+        </div>
+    
+    </div>
+    
+    <div class="problem-page1">
+        <div class="prob-container">
+            <div class="prob-title">
+                <h2>Writing Exercise</h2>
+            </div>
+    
+            <div class="prob-display">
+                
+                <div class="problem-statement">
+                    <p>Consider the circuit shown below and assume that the elements are ideal. <strong><em>Explain what happens to the power associated with V<sub>S</sub>, R<sub>1</sub>, R<sub>2</sub>, and R<sub>3</sub> as the resistance of R<sub>2</sub> decreases while the other component values (V<sub>S</sub>, R<sub>1</sub>, and R<sub>3</sub>) remain unchanged. </em></strong>Thoroughly explain the rationale supporting your conclusions, using equations only as necessary. Write in complete sentences.</p>
+                </div>
+
+                <div class="circuit-image">
+                    <img src="svg/circuit.svg" width="350"/>
+                </div>
+
+                <div class="secondary-problem-statement">
+                    <p>It is your <u>thought process</u> that is the most important, so write what you are thinking and respond to all prompts given. You will have approximately fifteen minutes to complete the problem.</p>
+                </div>
+                
+                <div class="question" id="ques-1">
+                    <p>(1)<em> Rate your perceived understanding of the question in which a rating of 100% means you completely understand the question. Enter the percentage in the box below.</em></p>
+                    <input type="text" class="input" id="ques-1-input" autocomplete="off">
+                    <label for="ques-1-input">%</label>
+                </div>
+
+                <div class="question" id="ques-2">
+                    <p>(2)<em> Rate your perceived ability to meaningfully answer the question in which a rating of 100% indicates you are certain you will be able to meaningfully answer the question. Enter the percentage in the box below.</em></p>
+                    <input type="text" class="input" id="ques-2-input" autocomplete="off">
+                    <label for="ques-2-input">%</label>
+                </div>
+                
+                <div class="sub-btn">
+                    <a class="prob-btn btn" id="prob-btn-1" href="#">Submit</a>
+                </div>  
+            </div>
+            
+        </div>
+    
+    </div>
+    
+    <div class="problem-page2">
+        
+        <div class="prob-container">
+            <div class="prob-title">
+                <h2>Writing Exercise</h2>
+            </div>
+    
+            <div class="prob-display">
+        
+                <div class="problem-statement">
+                    <p>Consider the circuit shown below and assume that the elements are ideal. <strong><em>Explain what happens to the power associated with V<sub>S</sub>, R<sub>1</sub>, R<sub>2</sub>, and R<sub>3</sub> as the resistance of R<sub>2</sub> decreases while the other component values (V<sub>S</sub>, R<sub>1</sub>, and R<sub>3</sub>) remain unchanged. </em></strong>Thoroughly explain the rationale supporting your conclusions, using equations only as necessary. Write in complete sentences.</p>
+                </div>
+
+                <div class="left">
+                    <div class="equation-creater">
+                        <p>Complicated formulas are not desired. If an equation is necessary, please build it into a complete sentence with the help of the buttons below.</p>
+                        <a class="eqn-btn btn" id="eqn" href="#"> the equation</a>
+                        <a class="eqn-btn btn" id="equals" href="#"> equals</a>
+                        <a class="eqn-btn btn" id="multiplied" href="#"> multiplied by</a>
+                        <a class="eqn-btn btn" id="divided" href="#"> divided by</a>
+                        <a class="eqn-btn btn" id="squared" href="#"> squared</a>
+                        <a class="eqn-btn btn" id="greater" href="#"> greater than</a>
+                        <a class="eqn-btn btn" id="less" href="#"> less than</a>
+                        <a class="eqn-btn btn" id="current" href="#"> current</a>
+                        <a class="eqn-btn btn" id="voltage" href="#"> voltage</a>
+                        <a class="eqn-btn btn" id="power" href="#"> power</a>
+                    </div>
+                </div>
+                
+                <div class="right">
+                    <div class="circuit-image page2-img">
+                        <img src="svg/circuit.svg" width="350"/>
+                    </div>
+
+                    <div class="popup">
+                        <p><em>You haven’t written anything in recently. Please remember to write what you are thinking as this is what is most important for this exercise!</em></p>
+                    </div>
+                </div>
+                
+                <div class="answer-box">
+                    <textarea id="answer-input" rows="5" columns="80" autocomplete="off"></textarea>
+                </div>
+                
+                <div class="drop-downs">
+                    <p>To summarize, your response supports the following conclusions as the resistance of R<sub>2</sub> decreases:</p>
+                    <div class="Vs-drop-down drop-down">
+                        <label for="Vs-summary">The power associated with V<sub>S</sub>:</label>
+                        <select id="Vs-summary" autocomplete="off">
+                            <option value="select">Select</option>
+                            <option value="increases">Increases</option>
+                            <option value="decreases">Decreases</option>
+                            <option value="stays-same">Stays same</option>
+                        </select>
+                    </div>
+                    <div class="R1-drop-down drop-down">
+                        <label for="R1-summary">The power associated with R<sub>1</sub>:</label>
+                        <select id="R1-summary" autocomplete="off">
+                            <option value="select">Select</option>
+                            <option value="increases">Increases</option>
+                            <option value="decreases">Decreases</option>
+                            <option value="stays-same">Stays same</option>
+                        </select>
+                    </div>
+                    <div class="R2-drop-down drop-down">
+                        <label for="R2-summary">The power associated with R<sub>2</sub>:</label>
+                        <select id="R2-summary" autocomplete="off">
+                            <option value="select">Select</option>
+                            <option value="increases">Increases</option>
+                            <option value="decreases">Decreases</option>
+                            <option value="stays-same">Stays same</option>
+                        </select>
+                    </div>
+                    <div class="R3-drop-down drop-down">
+                        <label for="R3-summary">The power associated with R<sub>3</sub>:</label>
+                        <select id="R3-summary" autocomplete="off">
+                            <option value="select">Select</option>
+                            <option value="increases">Increases</option>
+                            <option value="decreases">Decreases</option>
+                            <option value="stays-same">Stays same</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="sub-btn">
+                    <a class="prob-btn btn" id="prob-btn-2" href="#">Click to submit response once it is complete</a>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+    <div class="problem-page3">
+        <div class="prob-container">
+            <div class="prob-title">
+                <h2>Writing Exercise</h2>
+            </div>
+    
+            <div class="prob-display">
+                
+                <div class="question" id="ques-3">
+                    <p><em>Now that you have completed the problem, rate your perceived understanding of the question in which a rating of 100% means you completely understand the question. Enter the percentage in the box below.</em></p>
+                    <input type="text" class="input" id="ques-3-input" autocomplete="off">
+                    <label for="ques-3-input">%</label>
+                </div>
+                
+                <div class="question" id="ques-4">
+                    <p><em> Now that you have completed the problem, rate your perceived ability to meaningfully answer the question in which a rating of 100% indicates you are certain you meaningfully answered the question.</em></p>
+                    <input type="text" class="input" id="ques-4-input" autocomplete="off">
+                    <label for="ques-4-input">%</label>
+                </div>
+                
+                <div class="sub-btn">
+                    <a class="prob-btn btn" id="final-btn" href="#">Submit</a>
+                </div>  
+            </div>
+            
+        </div>
+    
+    </div>
+    
+    <div class="problem-page4">
+        <div class="prob-container">
+            <div class="prob-title">
+                <h2>Writing Exercise</h2>
+            </div>
+            
+            <div class="prob-display display-4">
+                <div class="primary-response">
+                    <p><em>Your response:</em></p>
+                    <p class="response">need to edit text content using js</p>                
+                </div>
+                
+                <div class="question" id="ques-5">
+                    <p><em>Read through your response shown above. Identify the sentence from your response with which you have the <b>least</b> confidence and explain why you question its accuracy.</em></p>
+                    <textarea class="end-textarea" id="least-input" rows="3" columns="60" autocomplete="off"></textarea>
+                </div>
+                
+                <div class="question" id="ques-6">
+                    <p><em>Read through your response at the top of the page. Identify the sentence from your response with which you have the <b>most</b> confidence and explain why you question its accuracy.</em></p>
+                    <textarea class="end-textarea" id="most-input" rows="3" columns="60" autocomplete="off"></textarea>
+                </div>
+                
+                <div class="sub-btn">
+                    <a class="prob-btn btn" id="last-btn" href="#">Submit</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="js/main.js"></script>
+    
+</body>
+    
+    
+    
+    

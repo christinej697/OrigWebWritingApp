@@ -1,0 +1,103 @@
+# This program accepts a user entry and:
+# 1. Initializes the student model
+# 2. Creates doc objects for sentences
+# 3. Calls functions to check for various misconceptions
+# 4. Calls for the appropriate DLR
+
+# import misconception modules
+import sequential
+import constant_voltage
+import ideal_voltage_source
+import resistor_combination_error
+import current_precedence_error
+
+import spacy
+nlp = spacy.load('en_core_web_sm')
+from spacy.matcher import Matcher
+matcher = Matcher(nlp.vocab)
+import re
+
+
+# create student model
+# Items such as 'id', dropdown values, and raw response are to be pulled from web app
+# "Misconceptions" and "correct conceptions" will be evaluated using SpaCY 
+
+student_model={
+    'id':'a12345',
+    'vs_dropdown':"",
+    'r1_dropdown':"",
+    'r2_dropdown':"",
+    'r3_dropdown':"",
+    'raw_response':"",
+    'misconceptions':{
+        'sequential':'false',
+        'localized':'false',
+        'constant_voltage':'false',
+        'ideal_voltage_source':'false',
+        'resistor_combination_error':'false',
+        'energy_conservation':'false',
+        'current_precedence_error':'false',
+    },
+    'correct_conceptions':{
+        'parallel':'false',
+        'equivalent_resistance':'false',
+        'power_equation':'true',
+    },
+    'metacognition':{
+        'pre_understanding':0,
+        'pre-ability':0,
+        'post_understanding':0,
+        'post_ability':0,
+        'least_confident_sentence':"",
+        'most_confident_sentence':"",
+
+    },
+    'feedback_on_feedback':'',
+}
+
+# Ask question.  This simulates ask from web app
+prompt = "Consider the circuit shown below and assume that the elements are ideal."
+prompt +="\nExplain what happens to the power associated with Vs, R1,R2 and R3"
+prompt +="\nas the resistance of R2 decreases while the other component values"
+prompt +="\n(VS,R1,and R3) remain unchanged. "
+
+# Hold user response
+response=input(prompt)
+
+# Load the raw response
+student_model['raw_response']=response
+
+# Split response into sentences
+
+response_sentences=list(range(len(response.split("."))))
+response_sentences=response.split(".")
+
+# Take each sentence of response and make it a doc object
+for i in range(len(response_sentences)):
+	response_sentences[i]=nlp(response_sentences[i])
+
+# Check for sequential misconception and update student model accordingly
+student_model=sequential.sequential_check(response_sentences,student_model)
+
+# Check for constant voltage misconception and update student model accordingly
+student_model=constant_voltage.constant_voltage_check(response_sentences,student_model)
+
+# Check for constant voltage misconception and update student model accordingly
+student_model=ideal_voltage_source.ideal_voltage_source_check(response_sentences,student_model)
+
+# Check for resistor combination errors and update student model accordingly
+student_model=resistor_combination_error.resistor_combination_error_check(response_sentences,student_model)
+
+# Check for current precedence errors and update student model accordingly
+student_model=current_precedence_error.current_precedence_error_check(response_sentences,student_model)
+
+
+
+#def sequential_dlr():
+#    """ Leads user through DRL for sequential misconception """
+
+print(student_model)
+
+
+
+

@@ -1,0 +1,50 @@
+# This module evaluates a student's response for the sequential misconception.
+# It require requires the response_sentences doc object and the student model.
+# It returns the student model, updated if the sequential misconception is
+# detected.  Is student_model['misconceptions']['sequential']='true'? 
+
+
+
+def sequential_check(response_sentences,student_model):
+	"""This function checks for the presence of a sequential misconception"""
+	import spacy
+	nlp = spacy.load('en_core_web_sm')
+	from spacy.matcher import Matcher
+	matcher = Matcher(nlp.vocab)
+	import re
+	# r1 + one token + unaffected
+	pattern1 = [{'LOWER':'r1'},{'is_ascii':True,'OP':'?'},{'is_ascii':True,'OP':'?'},{'LOWER':'unaffected'}]
+	# r1 + two tokens + unaffected
+	pattern2 = [{'LOWER':'r1'},{'is_ascii':True,'OP':'?'},{'is_ascii':True,'OP':'?'},{'is_ascii':True,'OP':'?'},{'LOWER':'unaffected'}]
+	# r1 + one token + not + affected
+	pattern3 = [{'LOWER':'r1'},{'is_ascii':True,'OP':'?'},{'LOWER':'not'},{'LOWER':'affected'}]
+	# r1 + one token + not + one token + affected
+	pattern4 = [{'LOWER':'r1'},{'is_ascii':True,'OP':'?'},{'LOWER':'not'},{'is_ascii':True,'OP':'?'},{'LOWER':'affected'}]
+	pattern5 = [{'LOWER':'before'},{'LOWER':'r2'}]
+	pattern6 = [{'LOWER':'after'},{'LOWER':'r1'}]
+	pattern7 = [{'LOWER':'come'},{'LOWER':'before'}]
+	pattern8 = [{'LOWER':'come'},{'LOWER':'after'}]
+	pattern9 = [{'LOWER':'power'},{'is_ascii':True,'OP':'?'},{'is_ascii':True,'OP':'?'},{'LOWER':'same'}]
+	pattern10 = [{'LOWER':'not'},{'LOWER':'affect'},{'is_ascii':True,'OP':'?'},{'LOWER':'power'}]
+
+	patterns = [pattern1,pattern2,pattern3,pattern4,pattern5,pattern6,pattern7,pattern8,pattern9,pattern10]
+	matcher.add('Sequential', patterns)
+
+	sequential_misconception_count=0
+	found_matches_array=list(range(len(response_sentences)))
+
+	for i in range(len(response_sentences)):
+		found_matches_array[i]=matcher(response_sentences[i])
+
+		for match_id, start, end in found_matches_array[i]:
+			string_id = nlp.vocab.strings[match_id]  # get string representation
+			span = response_sentences[i][start:end]                    # get the matched span
+			#print(match_id, string_id, start, end, span.text)
+			print('\n')
+			print(response_sentences[i])
+			sequential_misconception_count+=1
+
+			if sequential_misconception_count != 0:
+				student_model['misconceptions']['sequential']='true'
+
+	return student_model
